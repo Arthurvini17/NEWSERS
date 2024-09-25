@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    @section('header') <!-- Seção do header -->
+    @section('header') 
         <header>
             <div class="flex items-center justify-between p-4 text-white bg-black">
                 <h1 class="text-sm">Meu Site</h1>
                 <nav class="flex flex-row">
-                    <ul class="flex space-x-4">
-                        <li><a href="#" class="text-sm sm:text-base md:text-lg">Home</a></li>
+                    <ul class="flex items-start justify-start">
+                        <li><a href="#" class="mr-10 text-sm">Home</a></li>
                     </ul>
                 </nav>
             </div>
@@ -26,7 +26,7 @@
     @show
 
     <div class="container mx-auto">
-        @yield('content') <!-- Conteúdo específico da página -->
+        @yield('content') 
     </div>
 
     

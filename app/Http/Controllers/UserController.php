@@ -27,4 +27,10 @@ class UserController extends Controller
 
         return redirect('/home')->with('sucess', 'created');
     }
+
+    public function ShowUsers(Request $request){
+        $users = User::all();
+
+        return view('show_user', ['users' => $users]);
+    }
 }
