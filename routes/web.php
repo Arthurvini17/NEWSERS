@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::post('/',[UserController::class, 'create'])->name('create.user');
+Route::delete('/{user}',[UserController::class, 'destroy'])->name('users.destroy');
 
+Route::get('/login',[AuthController::class, 'auth'])->name('user.auth');

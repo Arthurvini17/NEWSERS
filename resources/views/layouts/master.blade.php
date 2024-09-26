@@ -15,7 +15,7 @@
 
 <body>
     @section('header') 
-        <header>
+        <header class="">
             <div class="flex items-center justify-between p-4 text-white bg-black font-roboto">
                 <h1 class="text-2xl font-roboto">NEWSERS</h1>
                 <nav class="flex flex-row">
