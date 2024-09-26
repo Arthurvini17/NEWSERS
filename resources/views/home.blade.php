@@ -11,17 +11,17 @@
 
 <div>
 
-    <div class="m-2 ">
-        <button id="openModal" class="p-2 text-2xl font-bold text-center bg-red-400 rounded-md font-roboto">+ Add new user</button>
-    </div>
-
+    
     
 <div id="myModal" style="display: none;"
-    class="fixed inset-0 flex items-center justify-center mt-10 text-white transition ease-in-out bg-slate-900">
-    <div class="flex flex-col items-center justify-center h-1/2 shadow-inherit">
+    class="fixed inset-0 flex items-center justify-center text-white bg-slate-900 opacity-90 ">
+    <div class="flex flex-col items-center justify-center w-full h-full shadow-inherit">
         <form method="POST" action="{{route('create.user')}}" class="">
             @csrf
 
+            <div class="flex items-center justify-center">
+                <h1>Add your user</h1>
+            </div>
             <div class="">
                 <label for="name">Name user</label>
                 <input class="flex w-full gap-2 px-4 border border-pink-600 rounded-tr-lg bg-slate-900 placeholder:text-white" type="text" name="name" placeholder="Name here">
@@ -43,9 +43,19 @@
 
 
 
+
+
+</div>
+
 @include('show_user', ['users' => $users])
 
+<div class="flex items-center justify-center m-2 ">
+    <button id="openModal" class="flex items-center p-2 text-2xl font-bold text-center bg-red-400 rounded-md md:hidden font-roboto">+</button>
 
+
+    <span>
+    <button id="openModal" class="flex items-center p-2 text-2xl font-bold text-center bg-red-400 rounded-md md:block font-roboto">Adicionar usuario</button>
+</span>
 </div>
 
 @endsection

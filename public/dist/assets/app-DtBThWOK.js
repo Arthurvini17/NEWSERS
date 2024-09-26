@@ -1,0 +1,1 @@
+var n=document.getElementById("myModal"),o=document.getElementById("openModal"),l=document.getElementById("closeModal");o.onclick=function(){n.style.display="block"};l.onclick=function(){n.style.display="none"};window.onclick=function(e){e.target===n&&(n.style.display="none")};
