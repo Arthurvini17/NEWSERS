@@ -21,4 +21,9 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::post('/',[UserController::class, 'create'])->name('create.user');
 Route::delete('/{user}',[UserController::class, 'destroy'])->name('users.destroy');
 
-Route::get('/login',[AuthController::class, 'auth'])->name('user.auth');
+Route::get('/login',[AuthController::class, 'index'])->name('index.user');
+Route::post('/login',[AuthController::class, 'auth'])->name('auth');
+
+
+Route::get('/register', [AuthController::class, 'index_register'])->name('index.create');
+Route::post('/register', [AuthController::class, 'register_create'])->name('create.user');

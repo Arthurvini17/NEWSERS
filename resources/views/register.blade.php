@@ -1,7 +1,6 @@
 <div>
     @extends('layouts.master')
 
-    @section('title', 'Login')
     @section('content')
     <div class="flex flex-col items-center min-h-screen bg-slate-900">
 
@@ -9,7 +8,7 @@
             <h1 class="text-4xl font-bold text-pink-700 font-roboto">Login</h1>
             <span class="block w-full mt-1 border-b border-pink-700"></span>
         </div>
-        <form action="{{route('auth')}} " method="POST" class="gap-4 text-xl text-white font-poppins">
+        <form action="{{route('create.user')}} " method="POST" class="gap-4 text-xl text-white font-poppins">
             @csrf 
 
             <div class="flex flex-col items-center justify-center gap-4">
@@ -31,7 +30,7 @@
 
                 <div>
                     <button type="submit"
-                        class="text-4xl font-semibold rounded-md text-slate-50 w-80 font-roboto bg-slate-500">Login</button>
+                        class="text-4xl font-semibold rounded-md text-slate-50 w-80 font-roboto bg-slate-500">Register</button>
                 </div>
             </div>
 
@@ -61,5 +60,5 @@
     </div>
 
 </div>
-
-@endsection
+    @endsection
+</div>

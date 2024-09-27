@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'funcionario',
+            'provider' => 'funcionarios',
         ],
     ],
 
@@ -60,7 +60,7 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'funcionarios' => [
             'driver' => 'eloquent',
             'model' => App\Models\Funcionario::class,
         ],
