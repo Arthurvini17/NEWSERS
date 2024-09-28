@@ -26,4 +26,8 @@ Route::post('/login',[AuthController::class, 'auth'])->name('auth');
 
 
 Route::get('/register', [AuthController::class, 'index_register'])->name('index.create');
-Route::post('/register', [AuthController::class, 'register_create'])->name('create.user');
+Route::post('/register', [AuthController::class, 'register_create'])->name('create.funcionario');
+
+Route::get('/', [UserController::class,'search'])->name('users.search');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

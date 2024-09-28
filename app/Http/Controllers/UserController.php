@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
 class UserController extends Controller
@@ -34,15 +35,21 @@ class UserController extends Controller
     }
 
     public function ShowUsers(Request $request){
-        $users = User::all();
+      $users = User::all();
 
         return view('show_user', ['users' => $users]);
     }
-
     public function destroy(Request $request, User $user){
         $user->delete();
 
         return redirect()->route('home');
 
+    }
+    public function search(Request $request) {
+        $search = $request->input('search');
+
+        $users = User::where('name', 'like', "%$search%")->paginate(5);
+
+        return view('show_user', ['users' => $users, 'search' => $search]);
     }
 }

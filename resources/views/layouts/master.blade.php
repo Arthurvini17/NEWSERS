@@ -17,9 +17,17 @@
         <header class="">
             <div class="flex items-center justify-between p-4 text-white bg-black font-roboto">
                 <h1 class="text-2xl font-roboto">NEWSERS</h1>
-                <nav class="flex flex-row">
-                    <ul class="flex items-start justify-start">
+                <nav class="flex flex-row ">
+                    <ul class="flex items-start gap-2">
+
                         <li><a href="#" class="mr-10 text-sm">Home</a></li>
+
+                        @auth
+                        <p>Olá, {{ Auth::user()->username }}</p>
+                        
+                        <a href="{{route('logout')}}">Logout</a>
+                        @endauth
+
                     </ul>
                 </nav>
             </div>

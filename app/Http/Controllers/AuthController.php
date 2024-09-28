@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->sesion()->regenerate();
+            $request->session()->regenerate();
             return redirect()->route('home');
         } else {
             return back()->withErrors([
@@ -55,6 +55,11 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('home')->with('success', 'User created successfully');
+        return redirect()->route('login')->with('success', 'User created successfully');
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect('/login');
     }
 }
