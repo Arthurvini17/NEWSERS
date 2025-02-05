@@ -4,7 +4,7 @@
 @parent
 @endsection
 @section('content')
-<div class="h-screen bg-slate-900">
+<div class="h-screen  bg-slate-900">
     <div id="myModal" style="display: none;"
         class="fixed inset-0 flex items-center justify-center text-white bg-slate-900 opacity-90 ">
         <div class="flex flex-col items-center justify-center w-full h-full shadow-inherit">
@@ -53,9 +53,10 @@
                     </div>
 
                     <div class="flex items-center justify-center">
-                        <button type="submit" class="p-2 mt-2 bg-purple-600 rounded-tr-lg">Create</button>
+                        <button type="submit" class="p-2 mt-2 bg-white rounded-tr-lg">Create</button>
                     </div>
-                    <span class="flex items-center justify-center text-4xl" id="closeModal" style="cursor: pointer;">&times; </span>
+                    <span class="flex items-center justify-center text-4xl" id="closeModal"
+                        style="cursor: pointer;">&times; </span>
 
                 </div>
 
@@ -64,21 +65,26 @@
     </div>
 
 
- 
 
+    <div>
+        <div class="flex items-center justify-center m-2 ">
+            <button id="openModal"
+                class="p-2 text-2xl font-bold text-black bg-black rounded-md md:hidden font-roboto">+</button>
+    
+    
+            <button id="openModalMD"
+                class="items-center hidden p-2 text-2xl font-bold text-center bg-black rounded-md md:block font-roboto">Adicionar
+                usuario</button>
+    
+        </div>
+    </div>
 
-
-
-    @include('show_user');
    
 
-    <div class="flex items-center justify-center m-2 ">
-        <button id="openModal" class="p-2 text-2xl font-bold bg-purple-800 rounded-md md:hidden font-roboto">+</button>
+    @include('show_user')
 
-
-        <button id="openModalMD"
-            class="items-center hidden p-2 text-2xl font-bold text-center bg-purple-800 rounded-md md:block font-roboto">Adicionar
-            usuario</button>
-    </div>
+  
 </div>
+
+
 @endsection

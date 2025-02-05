@@ -1,4 +1,4 @@
-<div class="h-screen bg-slate-900">
+<div class="h-screen ">
     @extends('layouts.master')
     @section('title', 'home')
     @section('header')
@@ -6,17 +6,13 @@
     @endsection
     @section('content')
 
-    <form action="/" method="GET">
-        <input type="search" name="search" placeholder="Search Products">
-        <button type="submit">Search</button>
-    </form>
-
+    
     @if($search)
     <h2>User search: {{$search}}</h2>
     @else
     <h2>User No found</h2>
     @endif
-    <table class="w-screen text-white table-fixed bg-slate-900">
+    <table class="w-screen text-white table-fixed ">
         <thead class=" bg-slate-950 sm:text-3xl">
             <tr class="text-center ">
                 <th class="">Nome</th>
@@ -58,6 +54,9 @@
         </div> --}}
 
     </table>
+
+    
+   
 </div>
 
 @endsection
